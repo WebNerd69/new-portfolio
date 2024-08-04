@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+     font-family: 'matter-regular';
+     src: url('../src/assets/matter-regular.ttf');
+}
+@font-face {
+     font-family: 'matter-light';
+     src: url('../src/assets/matter-light.ttf');
+}
+@font-face {
+     font-family: 'roboto';
+     src: url('../src/assets/roboto-flex-latin.ttf');
+}
+
+.matter-regular{
+     font-family: 'matter-regular';
+}
+.matter-light{
+     font-family: 'matter-light';
+}
+.roboto{
+     font-family: 'roboto';
+}
+*{
+     color: rgb(16, 16, 16);
+}
