@@ -36,7 +36,7 @@ function Cursor() {
           })
      )
      return (
-          <div className='w-4 h-4 bg-[#111111] fixed rounded-full cursorXY z-50' id='cursor'></div>
+          <div className='w-4 h-4 bg-[#111111] fixed rounded-full cursorXY z-10' id='cursor'></div>
           // <div className='main w-screen min-h-screen bg-transparent fixed z-50'>
           // </div>
      )

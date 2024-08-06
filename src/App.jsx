@@ -4,6 +4,10 @@ import Headings from './components/Headings'
 import Navbar from './components/Navbar'
 import React, { useEffect , useRef } from 'react'
 import Cursor from './components/Cursor';
+import Projects from './components/Projects';
+import About from './components/About';
+
+
 
 function App() {
 
@@ -13,6 +17,8 @@ function App() {
                <Cursor/>
                <Navbar />
                <Headings />
+               <About/>
+               <Projects/>
           </div>
      )
 }
