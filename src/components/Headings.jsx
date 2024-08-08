@@ -21,12 +21,12 @@ function Headings() {
           
      )
      return (
-          <div className='w-screen px-10 md:h-[60vh]  flex flex-col justify-center items-center relative'>
-               <div className='w-[66%] we'><h1 className='matter-regular'>we make it happen.</h1></div>
+          <div className='w-screen px-10 pt-5 md:h-[85vh] h-[80vh] flex flex-col justify-center items-center relative bg-white -mt-2'>
+               <div className='w-[66%] we px-2'><h1 className='matter-regular'>we make it happen.</h1></div>
                <div className='flex md:items-center md:space-x-7 px-3 min-h-28 flex-col md:flex-row my-5 z-20' >
-                    <span className='he py-1 px-3'><h1 className='text-[13vw] md:text-[5vw] matter-regular hover:scale-105 ml-1 leading-tight'>DESIGN</h1></span>
-                    <span className='he py-1 px-3'><h1 className='text-[13vw] md:text-[5vw] matter-regular hover:scale-105 ml-1 leading-tight'>DEVELOP</h1></span>
-                    <span className='he py-1 px-3'><h1 className='text-[13vw] md:text-[5vw] matter-regular hover:scale-105 ml-1 leading-tight'>DEPLOY</h1></span>
+                    <span className='he py-1 px-3 '><h1 className='text-[13vw] md:text-[5vw] matter-regular hover:scale-105 ml-1 leading-tight'>DESIGN</h1></span>
+                    <span className='he py-1 px-3 '><h1 className='text-[13vw] md:text-[5vw] matter-regular hover:scale-105 ml-1 leading-tight'>DEVELOP</h1></span>
+                    <span className='he py-1 px-3 '><h1 className='text-[13vw] md:text-[5vw] matter-regular hover:scale-105 ml-1 leading-tight'>DEPLOY</h1></span>
                </div>
 
           </div>

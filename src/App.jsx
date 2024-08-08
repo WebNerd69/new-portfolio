@@ -6,6 +6,7 @@ import React, { useEffect , useRef } from 'react'
 import Cursor from './components/Cursor';
 import Projects from './components/Projects';
 import About from './components/About';
+import Skills from './components/Skills';
 
 
 
@@ -19,6 +20,7 @@ function App() {
                <Headings />
                <About/>
                <Projects/>
+               <Skills/>
           </div>
      )
 }

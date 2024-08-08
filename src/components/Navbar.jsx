@@ -1,10 +1,27 @@
 import React, { Children, useEffect, useState } from 'react'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-
+import {useDispatch} from 'react-redux';
+import { bgHover , textHover } from '../store/CursorSlice';
 function Navbar() {
      const [menu,setMenu] = useState(-600)
-     const [hover,setHover] = useState(0)
+     const dispatch = useDispatch()
+     const [bghover,setBghover] = useState({
+          color:'bg-[#111]',
+          scale:1,
+     })
+     const [texthover,setTexthover] = useState({
+          color:'bg-[#111]',
+          scale:4.5,
+     })
+     useEffect(()=>{
+          let sombra = document.querySelector("nav .navLeft #logo")
+          let sombraTextList = sombra.textContent.split("")
+          sombra.innerHTML = ''
+          sombraTextList.forEach((e)=>{
+               sombra.innerHTML += `<span>${e}</span>`
+          })
+     })
 
      const menuClick = () =>{
           if (menu === -600){
@@ -15,8 +32,15 @@ function Navbar() {
           }
      }
 
-     
-
+     const navEnter = ()=>{
+          dispatch(bgHover(bghover))
+     }
+     const textEnter = () =>{
+          dispatch(textHover(texthover))
+     }
+     const defaultStyle = ()=>{
+          navEnter()
+     }
      useGSAP(() => {
           var tl = gsap.timeline()
           tl.from('.navLogo', {
@@ -37,7 +61,7 @@ function Navbar() {
      useGSAP(
           gsap.to(".menu",{
                right:menu,
-               duration:.3,
+               duration:.5,
                opacity:1,
                ease:'expoScale(0.5,7,none)',
                yoyo:true
@@ -45,38 +69,31 @@ function Navbar() {
           })
           
      )
-     // useEffect(()=>{
-     //      let sombra = document.querySelector("nav .navLeft #logo")
-     //      let sombraText = sombra.textContent
-     //      let spanText = sombraText.split("")
-     //      sombra.innerHTML = ''
-     //      spanText.forEach((e)=>{sombra.innerHTML += `<span id="yo">${e}</span>`})
-
-     //      console.log(document.querySelectorAll("nav .navLeft #logo").Children)
-
-     // },[]
-          
-     // )
-          
-
      return (
           <>
-               <nav className='flex justify-between py-4 pl-10 pr-0 relative z-10'>
-                    <div className="navLeft flex justify-center items-center space-x-2">
+               <nav className='flex justify-between py-4 pl-10 pr-0 relative bg-white' onMouseEnter={navEnter}>
+                    <div className="navLeft flex justify-center items-center space-x-2 z-20 p-4" onMouseEnter={textEnter}onMouseLeave={defaultStyle}>
                          <img src="./public/logo.png" alt="" className='w-7 h-7 z-20 navLogo' />
-                         <span className='matter-regular text-2xl cursor-pointer z-20 navLogo' id='logo'>sombra</span>
+                         <span className='matter-regular text-2xl cursor-pointer z-20 navLogo' id='logo' >sombra</span>
                     </div>
-                    <div className="right relative">
-                         <div className="overlay absolute z-40 w-[100%] h-[100%]" onClick={menuClick} onMouseEnter={()=>{setHover(1)}} onMouseLeave={()=>{setHover(0)}}></div>
-                         <ul className='flex items-center cursor-pointer  space-x-5 w-32 h-16 justify-evenly relative ' id='menu'>
-                              <li className='roboto text-lg left-2 absolute '>menu</li>
-                              <li className=' text-xl font-black z-30 ' ><button className={hover?"scale-110 z-30 w-9 h-9 bg-black rounded-full transition-all duration-300":"scale-100"} ><i className={hover?"ri-menu-line text-white transition-all duration-300":"ri-menu-line"} ></i></button></li>
+                    <div className="right relative z-30">
+                         <ul className='flex items-center cursor-pointer  space-x-5 w-32 h-16 justify-evenly relative z-30' id='menu'>
+                              <li className='roboto text-lg left-0 absolute z-30 hover:text-white transition-all duration-200' onMouseEnter={textEnter} onMouseLeave={defaultStyle}id='menuT'>menu</li>
+                              <li className=' text-xl font-black z-30 ' onClick={menuClick}>
+                                   <button className='w-12 h-12 rounded-[100px] matter-regular text-2xl relative overflow-hidden flex items-center justify-center baraButton'>
+					               <span className='z-10 relative'><i className="ri-menu-line" ></i></span>
+				               </button>
+                              </li>
                          </ul>
                     </div>
                </nav>
-
+               
                <div className="menu h-screen md:w-[600px] rounded-l-3xl absolute bg-[#ffffff84] backdrop-blur-md top-0 -right-[600px] px-10 w-screen md:px-20 z-[30]">
-                    <div className=' absolute right-5  top-5 z-50 crossBtn' onClick={menuClick}><i className="ri-close-large-fill hover:text-white hover:bg-[#111]  rounded-full flex justify-center items-center w-14 h-14 text-xl"></i></div>
+                    <div className=' absolute right-5  top-5 z-50 crossBtn' onClick={menuClick}>
+                         <button className='w-12 h-12 rounded-[100px] matter-regular text-2xl relative overflow-hidden flex items-center justify-center baraButton'>
+					     <span className='z-10 relative'><i className="ri-close-large-fill" ></i></span>
+				     </button>
+                    </div>
                     <div className='flex md:justify-between flex-col md:flex-row px-10'>
 
                          <div className='left md:my-36 mt-10'>

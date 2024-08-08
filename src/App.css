@@ -28,6 +28,9 @@
      overflow-x: hidden;
      
 }
+html,body{
+     background: #111;
+}
 ::-webkit-scrollbar{
      display: none;
 }
@@ -62,6 +65,12 @@
 .baraButton:hover span{
      color: white;
 }
+.baraButton span i{
+     transition: all ease .4s;
+}
+.baraButton:hover span i{
+     color: white;
+}
 .baraButton:hover::after{
      bottom: 0;
      border-radius: 0;
@@ -80,5 +89,95 @@
 .he h1:hover{
      -webkit-text-stroke: #fff;
      color: #111;
+
+}
+
+.baraButtonB span{
+
+     transition: all ease-in-out .4s;
+}
+.baraButtonB::after{
+     content: "";
+     width: 100%;
+     height: 100%;
+     background-color: rgb(255, 255, 255);
+     position: absolute;
+     bottom: -100%;
+     border-radius: 50%;
+     transition: all ease-in-out .4s;
+}
+.baraButtonB:hover span{
+     color: black;
+}
+.baraButtonB:hover::after{
+     bottom: 0;
+     border-radius: 0;
+
+}
+.baraButtonB:active{
+     scale: .95;
+}
+.uparNich{
+     animation: upDown 7s ease-in-out 1s infinite alternate ;
+     /* filter: drop-shadow(2px 2px 20px #0000001a); */
+}
+
+.chal{
+     animation: chalBhai 7s ease-in-out 1s infinite alternate ;
+
+}
+
+@keyframes upDown {
+     from {
+          transform: translate(-30px ,-20px) skew(-2deg) rotate(-3deg);
+          
+     }
+     to {
+          transform: translate(20px , 0px) skewY(-2deg) scaleY(1.05) rotate(3deg);
+          
+     }
+}
+
+@keyframes chalBhai {
+     from{
+          transform: rotate(2deg);
+     }
+
+     to{
+          transform: rotate(-2deg);
+     }
+}
+.text-shadow{
+     text-shadow: 1px 1px 10px #00000055;
+}
+/* nav .navLeft #logo span{
+     transition: all ease-in-out .25s;
+}
+nav .navLeft #logo:hover *{
+     color: white;
+     
+}
+nav .navLeft img{
+     transition: all ease-in-out .25s;
+     
+     }
+     nav .navLeft img:hover{
+          filter: invert(1);
+          } */
+nav .navLeft{
+     transition: all ease-in-out .25s;
+     
+}
+
+nav .navLeft:hover{
+     filter: invert(1);
+}
+
+nav .Right #menu #menuT{
+     transition: all ease-in-out .25s;
+     
+}
+nav .Right #menu #menuT:hover{
+     color: white;
 
 }
