@@ -1,0 +1,26 @@
+.roboto-flex {
+  font-family: "Roboto Flex", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "wdth" 200, "GRAD" 0, "XOPQ" 100,
+    "XTRA" 468, "YOPQ" 100, "YTAS" 750, "YTDE" -250, "YTFI" 600, "YTLC" 514,
+    "YTUC" 712, "wght" 600;
+  /* text-shadow: 0px 0px 10px white; */
+}
+
+/* .glow{
+  animation: glow .25s 3 alternate;
+}
+
+@keyframes glow {
+  0%{
+    text-shadow: 0 0 0 white;
+  }
+  10%,40%{
+    text-shadow: 0 0 30px white;
+  }
+  100%{
+    text-shadow: 0 0 30px white;
+  }
+} */
+

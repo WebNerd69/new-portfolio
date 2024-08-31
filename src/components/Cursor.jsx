@@ -27,7 +27,7 @@ function Cursor() {
           })
      )
      return (
-          <div className={`w-4 h-4 ${curStyle.color} fixed rounded-full cursorXY z-10`} id='cursor'></div>
+          <div className={`w-3 h-3 ${curStyle.color} fixed rounded-full cursorXY ${curStyle.z}`} id='cursor'></div>
      )
 }
 
